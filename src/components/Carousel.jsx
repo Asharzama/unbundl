@@ -3,21 +3,21 @@ import "./Carousel.css";
 const CarouselComp = () => {
   return (
     <Carousel indicators={false}>
-      <Carousel.Item>
+      <Carousel.Item interval={2000}>
         <img
           className="d-block w-100"
           src="images/image1.jpg"
           alt="First slide"
         />
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item interval={2000}>
         <img
           className="d-block w-100"
           src="images/image2.jpg"
           alt="Second slide"
         />
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item interval={2000}>
         <img
           className="d-block w-100"
           src="images/image3.jpg"
