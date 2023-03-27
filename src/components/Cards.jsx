@@ -16,7 +16,7 @@ const ChocolateCards = () => {
         numberOfBrownChocolate * priceBrown +
         numberOfWhiteChocolate * priceWhite
     );
-  }, [numberOfItems]);
+  }, [numberOfDarkChocolate, numberOfBrownChocolate, numberOfWhiteChocolate]);
   const priceDark = 80,
     priceBrown = 60,
     priceWhite = 90;
