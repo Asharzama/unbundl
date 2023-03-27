@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 import "./Cards.css";
 
 const ChocolateCards = () => {
+  // State Management
   const [numberOfItems, setNumberOfItems] = useState(0);
   const [numberOfDarkChocolate, setNumberOfDarkChocolate] = useState(0);
   const [numberOfBrownChocolate, setNumberOfBrownChocolate] = useState(0);
   const [numberOfWhiteChocolate, setNumberOfWhiteChocolate] = useState(0);
   const [totalCost, setTotalCost] = useState(0);
 
+  // Functions
   useEffect(() => {
     setTotalCost(
       numberOfDarkChocolate * priceDark +
@@ -17,11 +17,40 @@ const ChocolateCards = () => {
         numberOfWhiteChocolate * priceWhite
     );
   }, [numberOfDarkChocolate, numberOfBrownChocolate, numberOfWhiteChocolate]);
+
+  // Price of Chocolates
   const priceDark = 80,
     priceBrown = 60,
     priceWhite = 90;
+
+  // Array of Chocolates
+  const chocolateArray = [
+    {
+      source: "dark-chocolate",
+      name: "Dark Chocolate",
+      price: priceDark,
+      numberOfChocolate: numberOfDarkChocolate,
+      setNumberOfChocolate: setNumberOfDarkChocolate,
+    },
+    {
+      source: "brown-chocolate",
+      name: "Brown Chocolate",
+      price: priceBrown,
+      numberOfChocolate: numberOfBrownChocolate,
+      setNumberOfChocolate: setNumberOfBrownChocolate,
+    },
+    {
+      source: "white-chocolate",
+      name: "White Chocolate",
+      price: priceWhite,
+      numberOfChocolate: numberOfWhiteChocolate,
+      setNumberOfChocolate: setNumberOfWhiteChocolate,
+    },
+  ];
+
   return (
-    <div className="container">
+    <div className="cards_container">
+      {/* Total cost Section */}
       {
         <div className="display_section">
           {numberOfItems !== 0
@@ -29,58 +58,29 @@ const ChocolateCards = () => {
             : "Customize your pack"}
         </div>
       }
-      <div className="d-lg-flex d-md-block justify-content-around">
-        <Card>
-          <Card.Img
-            variant="top"
-            src="images/dark-chocolate.jpg"
-            className="image"
-          />
-          <Card.Body>
-            <Card.Title>Dark Chocolate</Card.Title>
-            <Card.Text>Rs. {priceDark}.00</Card.Text>
-            <ButtonFunction
-              numberOfChocolate={numberOfDarkChocolate}
-              setNumberOfChocolate={setNumberOfDarkChocolate}
-              numberOfItems={numberOfItems}
-              setNumberOfItems={setNumberOfItems}
+
+      {/* Chocolate Cards */}
+      <div className="cards_wrapper">
+        {/* Chocolate Cards */}
+        {chocolateArray.map((item, index) => (
+          <div className="chocolate_card" key={index}>
+            <img
+              src={`images/${item.source}.jpg`}
+              className="image"
+              alt={`${item.source}`}
             />
-          </Card.Body>
-        </Card>
-        <Card>
-          <Card.Img
-            variant="top"
-            src="images/brown-chocolate.jpg"
-            className="image"
-          />
-          <Card.Body>
-            <Card.Title>Brown Chocolate</Card.Title>
-            <Card.Text>Rs. {priceBrown}.00</Card.Text>
-            <ButtonFunction
-              numberOfChocolate={numberOfBrownChocolate}
-              setNumberOfChocolate={setNumberOfBrownChocolate}
-              numberOfItems={numberOfItems}
-              setNumberOfItems={setNumberOfItems}
-            />
-          </Card.Body>
-        </Card>
-        <Card>
-          <Card.Img
-            variant="top"
-            src="images/white-chocolate.jpg"
-            className="image"
-          />
-          <Card.Body>
-            <Card.Title>White Chocolate</Card.Title>
-            <Card.Text>Rs. {priceWhite}.00</Card.Text>
-            <ButtonFunction
-              numberOfChocolate={numberOfWhiteChocolate}
-              setNumberOfChocolate={setNumberOfWhiteChocolate}
-              numberOfItems={numberOfItems}
-              setNumberOfItems={setNumberOfItems}
-            />
-          </Card.Body>
-        </Card>
+            <div className="card_body">
+              <h2>{item.name}</h2>
+              <p>Rs. {item.price}.00</p>
+              <ButtonFunction
+                numberOfChocolate={item.numberOfChocolate}
+                setNumberOfChocolate={item.setNumberOfChocolate}
+                numberOfItems={numberOfItems}
+                setNumberOfItems={setNumberOfItems}
+              />
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -112,22 +112,22 @@ const ButtonFunction = ({
 
   return (
     <div className="d-flex align-item-center">
-      <Button
+      <button
         disabled={numberOfItems === 8 ? true : false}
         className="custom-button"
         onClick={() => ChocolateIncrement(setNumberOfChocolate)}
       >
         +
-      </Button>
+      </button>
       {numberOfChocolate !== 0 ? (
         <span>
           <span className="item_number">{numberOfChocolate}</span>
-          <Button
+          <button
             className="custom-button"
             onClick={() => ChocolateDecrement(setNumberOfChocolate)}
           >
             -
-          </Button>
+          </button>
         </span>
       ) : null}
     </div>
