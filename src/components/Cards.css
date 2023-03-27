@@ -1,0 +1,57 @@
+.custom-button {
+  background-color: #000 !important;
+  font-size: 20px;
+  font-weight: 700;
+  border: none !important;
+  outline: none;
+}
+
+.custom-button:hover {
+  background-color: #aaa !important;
+}
+
+.image {
+  height: 60%;
+}
+
+.card-title {
+  font-size: 30px;
+}
+
+.card-text {
+  font-size: 25px;
+}
+
+.card {
+  border: none !important;
+  width: 18rem;
+  height: 35rem !important;
+}
+
+.item_number {
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0 14px;
+}
+
+.display_section {
+  height: 85px;
+  font-size: 25px;
+  font-weight: 600;
+  background-color: #003462;
+  color: #fff;
+  margin-bottom: 10px;
+  width: 280px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+@media (max-width: 769px) {
+  .card {
+    margin: 15px auto;
+  }
+}

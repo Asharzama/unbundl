@@ -1,0 +1,21 @@
+ASSIGNMENT 2 : Develop a Customizable Product Bundle for Chocolate brand
+
+The overall goal of this code is to create a simple web page that allows the user to purchase custom chocolates, with options for different flavors and quantities.
+
+The component `ChocolateCards` defines several pieces of state that track the user's selections, including the number of each type of chocolate selected (`numberOfDarkChocolate`, etc.), the total number of items selected (`numberOfItems`), and the total cost of the selections (`totalCost`). 
+
+Note that the `useEffect` hook is used to update the `totalCost` state variable whenever the `numberOfItems` variable changes.
+This means that any time the user adds or removes chocolate from their cart, the total cost will automatically update.
+
+The `ChocolateCards` component also defines several constants (`priceDark`, `priceBrown`, and `priceWhite`) that hold the price of each type of chocolate.
+
+Inside the `ChocolateCards` component, includes a "display section" that shows the total cost of the user's selections, as well as a group of `Card` components that display information about each type of chocolate.
+Each `Card` component includes an image, the name and price of the chocolate, and a set of buttons that allow the user to add or remove that particular chocolate from their cart.
+
+The functionality of the buttons is defined in a separate `ButtonFunction` component.
+This component takes in several props and defines two functions: `ChocolateIncrement` and `ChocolateDecrement`.
+These functions increment or decrement the number of a particular type of chocolate and also increment or decrement the total number of items.
+
+Overall, this code manages the states in a web application.
+The code also show to use reusable pieces of functionality that can be easily combined to create custom web pages.
+Code uses a third-party library (`react-bootstrap`) to quickly create styled UI elements.

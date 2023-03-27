@@ -1,0 +1,16 @@
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: #000 !important;
+  height: 7vmin !important;
+  width: 7vmin !important;
+  margin: auto 0 !important;
+  border-radius: 50% !important;
+}
+
+.carousel {
+  max-height: 100vmax;
+}
+
+.carousel-item:hover {
+  cursor: pointer !important;
+}

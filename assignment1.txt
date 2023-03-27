@@ -1,0 +1,16 @@
+ASSIGNMENT 1 : Create a Product Carousel for Featured Products
+
+The code imports a pre-built component called Carousel from the React-Bootstrap library.
+The component is used to create an image carousel, which is a great way to display multiple images in a small space on a website.
+The component is styled using a locally sourced CSS file.
+
+In this code block, the "indicators" prop has been set to false. 
+This means that the dots that usually appear at the bottom of the carousel slides to show which slide you're on will be hidden.
+
+These images will rotate automatically or can be scrolled through manually using the arrow buttons at either end of the carousel.
+
+The code uses React, a popular JavaScript library, and the React-Bootstrap library, which provides pre-built components that work well with React.
+This saves time and effort by allowing developers to focus on the functionality of their code rather than the nitty-gritty of writing CSS. 
+
+Therefore, this code follows a best practice of using pre-built and well-tested components to speed up development and ensure code reliability.
+

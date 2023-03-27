@@ -1,3 +1,5 @@
+## Read the assignment1.txt and assignment2.txt to find the explaination of the respective assignments.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
